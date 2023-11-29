@@ -33,8 +33,10 @@ public class Main {
 
         Iterator<Employee> employeeIterator = employees.iterator();
         while (employeeIterator.hasNext()) {
-
             Employee employee = employeeIterator.next();
+            if(employee == null){
+                continue;
+            }
             if (unique.containsKey(employee.getId())) {
                 duplicates.add(employee);
                 employeeIterator.remove();
